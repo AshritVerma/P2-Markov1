@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A WordGram represents a sequence of strings
@@ -8,9 +10,10 @@
  */
 public class WordGram {
 	
-	private String[] myWords;   
+	private String[] myWords;
 	private String myToString;  // cached string
 	private int myHash;         // cached hash value
+	boolean myCall = true;
 
 	/**
 	 * Create WordGram by creating instance variable myWords and copying
@@ -20,9 +23,9 @@ public class WordGram {
 	 * @param size the number of strings copied
 	 */
 	public WordGram(String[] source, int start, int size) {
-		myWords = new String[size];
-		myToString = null;
-		myHash = 0;
+		myWords = Arrays.copyOfRange(source, start, size+start);
+		myToString = "a";
+		myHash = 1;
 
 		// TODO: initialize all instance variable
 	}
@@ -45,7 +48,8 @@ public class WordGram {
 	 */
 	public int length(){
 		// TODO: change this
-		return 0;
+		int x = myWords.length;
+		return x;
 	}
 
 
@@ -59,6 +63,15 @@ public class WordGram {
 		if (! (o instanceof WordGram) || o == null){
 			return false;
 		}
+		else
+		{
+			WordGram wg = (WordGram) o;
+			for(int i = 0; i < myWords.length; i++) {
+				if (!this.myWords[i].equals(wg.myWords[i])) {
+					return false;
+				}
+			}
+		}
 		// TODO: Complete this method
 
 		return true;
@@ -67,6 +80,9 @@ public class WordGram {
 	@Override
 	public int hashCode(){
 		// TODO: complete this method: assign to myHash as needed
+		if(myCall == true)
+			myHash = this.toString().hashCode();
+		myCall = false;
 		return myHash;
 	}
 	
@@ -77,15 +93,23 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
-		WordGram wg = new WordGram(myWords,0,myWords.length);
-		// TODO: Complete this method
+		for(int j = 0; j < myWords.length-1; j++)
+		{
+			myWords[j] = myWords[j+1];
+		}
+		myWords[myWords.length-1] = last;
 
+		// TODO: Complete this method
+		WordGram wg = new WordGram(myWords,0,myWords.length);
 		return wg;
 	}
 
 	@Override
 	public String toString(){
 		// TODO: Complete this method, assign to myToString as needed
+		if(myCall == true)
+			myToString = String.join(" ", myWords);
+		myCall = false;
 		return myToString;
 	}
 }
