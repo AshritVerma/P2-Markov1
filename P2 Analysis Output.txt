@@ -8,8 +8,36 @@
 9: 177578-177465= 113
 10: 177570-177489= 81
 
+(1) Why the results of these methods should be the same in 
+terms of changes made to the HashSet parameter passed to each method.
 
-benchmark() takes file, parses through, adds Strings to ArrayList list, which is converted to array words
+The results of benchmark() and benchmarkShift() should be the same as they both
+ essentially 
+
+
+(2) What are the conceptual differences between the two
+benchmarking methode
+
+
+
+benchmark() takes file, parses through, adds Strings to ArrayList list, 
+which is converted to array words, then for loops through this array 
+for the WSIZE designated and creates a new Wordgram wg each time which is added to set
+Even though the method retruns the appropriated size of the words array, main prints
+the size through hset.size().
+
+benchmarkShift() creates a String array words, for loops through to add each word to
+the array, count is set to WSIZE, a new WordGRam object current is created with the
+new words array, which is added to the set. The next part of benchmarkShift() parses
+through and executes the shiftAdd() method to the new current object as the count
+subsequently increases which designates the size of the set.
+
+The primary difference is the fact that WordGram object wg is initialized every 
+iteration of the foor loop in benchmark(), whereas WordGram object current is initialized
+once with individual elements changing and then added to set. Conceptually, this makes
+benchmarkShift() significantly more scalable than benchmark().
+
+
 
 
 
