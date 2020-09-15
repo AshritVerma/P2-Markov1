@@ -13,7 +13,7 @@ public class WordGram {
 	private String[] myWords;
 	private String myToString;  // cached string
 	private int myHash;         // cached hash value
-	boolean myCall = true;
+	private boolean myCall = true;
 
 	/**
 	 * Create WordGram by creating instance variable myWords and copying
