@@ -1,0 +1,67 @@
+2: 177634-117174= 60453
+3: 177626-166861= 10765
+4: 177618-175622= 1996
+5: 177610-176934= 676
+6: 177602-177232= 370
+7: 177594-177360= 234
+8: 177586-177427= 159
+9: 177578-177465= 113
+10: 177570-177489= 81
+
+
+benchmark() takes file, parses through, adds Strings to ArrayList list, which is converted to array words
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hi Howie, thanks so much for today. I'm geniuinely looking forward to what's to come, and I can't wait for next Monday. 
+The YC category activity motivated me to think deeply about which fields I'm most interested having an impact in.
+Here's my finalized list:
+- AI: Quantum Computers, Automation
+- Data: Memory, Neuro (Neuralink)
+- Space: Mining, Architecture
+- Genetics/Genomics: Aging, Diseases
+- Energy: Transportation, Renewable
+I realize your busy schedule, but I'd greatly appreciate further guidance or just any Duke alums/people you may know working in these fields.
+Thanks!

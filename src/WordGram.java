@@ -60,7 +60,7 @@ public class WordGram {
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if (! (o instanceof WordGram) || o == null){
+		if (! (o instanceof WordGram) || o == null || !(((WordGram) o).length() == this.length())){
 			return false;
 		}
 		else
@@ -93,14 +93,15 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
-		for(int j = 0; j < myWords.length-1; j++)
+		WordGram wg = new WordGram(myWords,0,myWords.length);
+
+		for(int j = 0; j < wg.myWords.length-1; j++)
 		{
-			myWords[j] = myWords[j+1];
+			wg.myWords[j] = wg.myWords[j+1];
 		}
-		myWords[myWords.length-1] = last;
+		wg.myWords[wg.myWords.length-1] = last;
 
 		// TODO: Complete this method
-		WordGram wg = new WordGram(myWords,0,myWords.length);
 		return wg;
 	}
 
